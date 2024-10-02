@@ -4,77 +4,535 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart - Baliwag's Best Sizzling House</title>
-    <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <style>
+      /* Base styling for dark karinderya theme */
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #1a1a1a; /* Dark background for overall page */
+        color: #f0e68c; /* Light golden yellow for text */
+      }
+
+      /* Navbar styling */
+      .navbar {
+        background-color: #3a3a3a; /* Dark grey for a rustic, warm look */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      .navbar-brand {
+        font-size: 1.75rem;
+        font-weight: bold;
+        color: #ffcc00 !important; /* Bright yellow to stand out */
+      }
+
+      .nav-link {
+        color: #f0e68c !important; /* Light golden text for navbar links */
+      }
+
+      .nav-link:hover {
+        color: #ffae42 !important; /* Bright orange for hover */
+      }
+
+      /* Main content styling */
+      main {
+        padding: 2rem;
+        background-color: #2e2e2e; /* Dark grey for main content */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        margin: 3rem 20%; /* Margins for compact layout */
+      }
+
+      h2 {
+        color: #ffcc00; /* Bright yellow for section heading */
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .item-list {
+        margin-bottom: 1.5rem;
+      }
+
+      .cart-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem; /* Reduced padding */
+        background-color: #3a3a3a; /* Dark grey for cart items */
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        color: #f0e68c; /* Light golden text */
+      }
+
+      .cart-item img {
+        width: 50px; /* Small image size */
+        height: 50px; /* Maintain aspect ratio */
+        margin-right: 1rem; /* Space between image and text */
+        border-radius: 5px; /* Rounded corners for images */
+      }
+
+      .item-details {
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between; /* Align name and price */
+        margin-left: 1rem; /* Add margin between image and details */
+      }
+
+      .item-name {
+        flex-grow: 1; /* Allow name to take available space */
+        text-align: left; /* Align name to the left */
+      }
+
+      .item-price {
+        text-align: center; /* Center the price */
+        width: 100px; /* Fixed width for centering */
+      }
+
+      .quantity-control {
+        display: flex;
+        align-items: center;
+      }
+
+      .quantity-btn {
+        background-color: #ffcc00; /* Button color */
+        border: none;
+        color: #1a1a1a; /* Dark text color */
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0 0.5rem;
+      }
+
+      .quantity-btn:hover {
+        background-color: #ffae42; /* Bright orange on hover */
+      }
+
+      .total-section {
+        text-align: center;
+        margin-top: 2rem;
+        color: #ffcc00; /* Bright yellow for total */
+      }
+
+      .done-btn,
+      .clear-btn {
+        margin-top: 1.5rem;
+        background-color: #ffcc00;
+        border: none;
+        color: #1a1a1a;
+        padding: 0.5rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 1rem; /* Space between buttons */
+      }
+
+      .done-btn:hover,
+      .clear-btn:hover {
+        background-color: #ffae42; /* Bright orange on hover */
+      }
+
+      .receipt {
+        display: none; /* Initially hidden */
+        margin-top: 2rem;
+        background-color: #3a3a3a;
+        padding: 1rem;
+        border-radius: 5px;
+        text-align: center; /* Center the receipt text */
+      }
+
+      footer {
+        background-color: #3a3a3a; /* Darker grey for consistency */
+        color: #ffcc00; /* Bright text to match branding */
+        padding: 1.5rem 0;
+        text-align: center;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      .dine-in-take-out {
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .dine-in-take-out label {
+        margin-right: 1rem;
+        color: #ffcc00; /* Bright yellow for labels */
+      }
+    </style>
   </head>
+
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html"
-          >Baliwag's Best Sizzling House</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"></li>
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="menu.html">Menu</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cart.html">Cart</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="index.html"
+        >Baliwag's Best Sizzling House</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="menu.html">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <main>
       <h2>Your Cart</h2>
+
       <div class="item-list">
+        <!-- Cart Items -->
         <div class="cart-item">
-          <p>Breakfast Item 1</p>
+          <img src="assets/sizzling_pusit.jpg" alt="Sizzling Pusit" />
+          <div class="item-details">
+            <span class="item-name">Sizzling Pusit</span>
+            <span class="item-price">₱150</span>
+          </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
               -
             </button>
-            <span class="quantity" data-price="150">1</span>
+            <span class="quantity" data-price="150">0</span>
             <button onclick="incrementQuantity(this)" class="quantity-btn">
               +
             </button>
           </div>
         </div>
         <div class="cart-item">
-          <p>Lunch Item 1</p>
+          <img src="assets/chicken_bbq.jpg" alt="Chicken BBQ" />
+          <div class="item-details">
+            <span class="item-name">Chicken BBQ</span>
+            <span class="item-price">₱200</span>
+          </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
               -
             </button>
-            <span class="quantity" data-price="200">1</span>
+            <span class="quantity" data-price="200">0</span>
             <button onclick="incrementQuantity(this)" class="quantity-btn">
               +
             </button>
           </div>
         </div>
-        <!-- Add more cart items similarly -->
+        <div class="cart-item">
+          <img src="assets/pork_chop.jpg" alt="Pork Chop" />
+          <div class="item-details">
+            <span class="item-name">Pork Chop</span>
+            <span class="item-price">₱180</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="180">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/longgadog.jpg" alt="Longgadog" />
+          <div class="item-details">
+            <span class="item-name">Longgadog</span>
+            <span class="item-price">₱120</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="120">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/porkalog.jpg" alt="Porkalog" />
+          <div class="item-details">
+            <span class="item-name">Porkalog</span>
+            <span class="item-price">₱160</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="160">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/pancit_mix.jpg" alt="Pancit Mix" />
+          <div class="item-details">
+            <span class="item-name">Pancit Mix</span>
+            <span class="item-price">₱90</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="90">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/chao_fan.jpg" alt="Chao Fan" />
+          <div class="item-details">
+            <span class="item-name">Chao Fan</span>
+            <span class="item-price">₱100</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="100">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/lomi.jpg" alt="Lomi" />
+          <div class="item-details">
+            <span class="item-name">Lomi</span>
+            <span class="item-price">₱110</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="110">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/tokalog.jpg" alt="Tokalog" />
+          <div class="item-details">
+            <span class="item-name">Tokalog</span>
+            <span class="item-price">₱130</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="130">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/pork_liempo.jpg" alt="Pork Liempo" />
+          <div class="item-details">
+            <span class="item-name">Pork Liempo</span>
+            <span class="item-price">₱250</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="250">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/pork_sisig.jpg" alt="Pork Sisig" />
+          <div class="item-details">
+            <span class="item-name">Pork Sisig</span>
+            <span class="item-price">₱220</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="220">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/beef_pares.jpg" alt="Beef Pares" />
+          <div class="item-details">
+            <span class="item-name">Beef Pares</span>
+            <span class="item-price">₱240</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="240">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/pancit_bihon.jpg" alt="Pancit Bihon" />
+          <div class="item-details">
+            <span class="item-name">Pancit Bihon</span>
+            <span class="item-price">₱95</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="95">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/sotanghon.jpg" alt="Sotanghon" />
+          <div class="item-details">
+            <span class="item-name">Sotanghon</span>
+            <span class="item-price">₱90</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="90">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/hotkalog.jpg" alt="Hotkalog" />
+          <div class="item-details">
+            <span class="item-name">Hotkalog</span>
+            <span class="item-price">₱80</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="80">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/pork_tapa.jpg" alt="Pork Tapa" />
+          <div class="item-details">
+            <span class="item-name">Pork Tapa</span>
+            <span class="item-price">₱150</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="150">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/chikkalog.jpg" alt="Chikkalog" />
+          <div class="item-details">
+            <span class="item-name">Chikkalog</span>
+            <span class="item-price">₱120</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="120">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/longgkalog.jpg" alt="Longgkalog" />
+          <div class="item-details">
+            <span class="item-name">Longgkalog</span>
+            <span class="item-price">₱130</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="130">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/crispy_pork_belly.jpg" alt="Crispy Pork Belly" />
+          <div class="item-details">
+            <span class="item-name">Crispy Pork Belly</span>
+            <span class="item-price">₱250</span>
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="250">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
       </div>
+
       <div class="total-section">
         <h3>Total: ₱<span id="total-price">0</span></h3>
+      </div>
+
+      <div class="dine-in-take-out">
+        <label>
+          <input type="radio" name="dineOption" value="Dine In" checked /> Dine
+          In
+        </label>
+        <label>
+          <input type="radio" name="dineOption" value="Take Out" /> Take Out
+        </label>
+      </div>
+
+      <div class="text-center">
+        <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
+        <button class="done-btn" onclick="checkout()">Checkout</button>
+      </div>
+
+      <div class="receipt" id="receipt">
+        <h4>Receipt</h4>
+        <div id="receipt-items"></div>
+        <h5>Total Amount: ₱<span id="receipt-total">0</span></h5>
+        <p>Please show this receipt to the server.</p>
       </div>
     </main>
 
@@ -90,7 +548,7 @@
       function decrementQuantity(button) {
         const quantityElement = button.nextElementSibling;
         let currentQuantity = parseInt(quantityElement.textContent);
-        if (currentQuantity > 1) {
+        if (currentQuantity > 0) {
           quantityElement.textContent = currentQuantity - 1;
           calculateTotal();
         }
@@ -99,7 +557,6 @@
       function calculateTotal() {
         const quantities = document.querySelectorAll(".quantity");
         const totalPriceElement = document.getElementById("total-price");
-
         let totalPrice = 0;
 
         quantities.forEach((quantity) => {
@@ -109,6 +566,38 @@
         });
 
         totalPriceElement.textContent = totalPrice;
+      }
+
+      function clearCart() {
+        const quantities = document.querySelectorAll(".quantity");
+        quantities.forEach((quantity) => {
+          quantity.textContent = 0; // Reset quantities to 0
+        });
+        calculateTotal(); // Recalculate total
+        document.getElementById("receipt").style.display = "none"; // Hide receipt
+      }
+
+      function checkout() {
+        const quantities = document.querySelectorAll(".quantity");
+        const receiptItems = document.getElementById("receipt-items");
+        const receiptTotalElement = document.getElementById("receipt-total");
+        let receiptTotal = 0;
+        receiptItems.innerHTML = ""; // Clear previous receipt
+
+        quantities.forEach((quantity, index) => {
+          const itemPrice = parseInt(quantity.dataset.price);
+          const itemQuantity = parseInt(quantity.textContent);
+          if (itemQuantity > 0) {
+            const itemName =
+              document.querySelectorAll(".item-name")[index].textContent;
+            const itemTotal = itemPrice * itemQuantity;
+            receiptItems.innerHTML += `<p>${itemName}: ${itemQuantity} x ₱${itemPrice} = ₱${itemTotal}</p>`;
+            receiptTotal += itemTotal;
+          }
+        });
+
+        receiptTotalElement.textContent = receiptTotal;
+        document.getElementById("receipt").style.display = "block"; // Show receipt
       }
 
       // Initialize total on page load

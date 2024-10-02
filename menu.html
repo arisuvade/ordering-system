@@ -9,41 +9,138 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <style>
+      /* Base styling for dark karinderya theme */
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #1a1a1a; /* Dark background for overall page */
+        color: #f0e68c; /* Light golden yellow for text */
+      }
+
+      /* Navbar styling */
+      .navbar {
+        background-color: #3a3a3a; /* Dark grey for a rustic, warm look */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      .navbar-brand {
+        font-size: 1.75rem;
+        font-weight: bold;
+        color: #ffcc00 !important; /* Bright yellow to stand out */
+      }
+
+      .nav-link {
+        color: #f0e68c !important; /* Light golden text for navbar links */
+      }
+
+      .nav-link:hover {
+        color: #ffae42 !important; /* Bright orange for hover */
+      }
+
+      /* Menu section styling */
+      #menu {
+        margin-top: 3rem;
+      }
+
+      #menu h2 {
+        color: #ffcc00; /* Bright yellow for section heading */
+      }
+
+      .menu-section {
+        padding: 2rem 0;
+      }
+
+      .menu-section h3 {
+        color: #ffcc00; /* Bright yellow for subsection headings */
+        margin-bottom: 1.5rem;
+      }
+
+      .card {
+        background-color: #2e2e2e; /* Dark grey background for cards */
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3); /* Gold glow effect on hover */
+      }
+
+      .card-title {
+        color: #ffcc00; /* Bright yellow for dish names */
+        font-weight: bold;
+      }
+
+      .card-text {
+        color: #f0e68c; /* Light golden text for descriptions */
+      }
+
+      .card-img-top {
+        border-radius: 10px 10px 0 0;
+        height: 200px; /* Set a fixed height for images */
+        object-fit: cover; /* Ensure images cover the area without distortion */
+      }
+
+      /* Footer styling */
+      footer {
+        background-color: #3a3a3a; /* Darker grey for consistency */
+        color: #ffcc00; /* Bright text to match branding */
+        padding: 1.5rem 0;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        #menu h2,
+        .menu-section h3 {
+          font-size: 1.5rem;
+        }
+
+        .card {
+          margin-bottom: 1.5rem;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html"
-          >Baliwag's Best Sizzling House</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"></li>
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="menu.html">Menu</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cart.html">Cart</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="index.html"
+        >Baliwag's Best Sizzling House</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="menu.html">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <section id="menu" class="container my-5">
       <h2 class="text-center">Our Menu</h2>
@@ -55,14 +152,15 @@
           <div class="col-md-4">
             <div class="card">
               <img
-                src="assets/breakfast-1.jpg"
+                src="assets/pork_tapa.jpg"
                 class="card-img-top"
-                alt="Breakfast Dish 1"
+                alt="Pork Tapa"
               />
               <div class="card-body">
-                <h5 class="card-title">Tapsilog</h5>
+                <h5 class="card-title">Pork Tapa</h5>
                 <p class="card-text">
-                  Tender beef tapa served with garlic fried rice and egg.
+                  Tender pork marinated and served with garlic fried rice and
+                  egg.
                 </p>
               </div>
             </div>
@@ -70,14 +168,14 @@
           <div class="col-md-4">
             <div class="card">
               <img
-                src="assets/breakfast-2.jpg"
+                src="assets/hotkalog.jpg"
                 class="card-img-top"
-                alt="Breakfast Dish 2"
+                alt="Hotkalog"
               />
               <div class="card-body">
-                <h5 class="card-title">Longsilog</h5>
+                <h5 class="card-title">Hotkalog</h5>
                 <p class="card-text">
-                  Savory longganisa with garlic fried rice and egg.
+                  Hotdog served with garlic fried rice and egg.
                 </p>
               </div>
             </div>
@@ -85,15 +183,43 @@
           <div class="col-md-4">
             <div class="card">
               <img
-                src="assets/breakfast-3.jpg"
+                src="assets/chikkalog.jpg"
                 class="card-img-top"
-                alt="Breakfast Dish 3"
+                alt="Chikkalog"
               />
               <div class="card-body">
-                <h5 class="card-title">Bangsilog</h5>
+                <h5 class="card-title">Chikkalog</h5>
                 <p class="card-text">
-                  Crispy fried bangus served with garlic fried rice and egg.
+                  Chicken served with garlic fried rice and egg.
                 </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="assets/longgadog.jpg"
+                class="card-img-top"
+                alt="Longgadog"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Longgadog</h5>
+                <p class="card-text">
+                  Longganisa and hotdog served with fried rice and egg.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="assets/tokalog.jpg"
+                class="card-img-top"
+                alt="Tokalog"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Tokalog</h5>
+                <p class="card-text">Tokwa and egg served with fried rice.</p>
               </div>
             </div>
           </div>
@@ -107,14 +233,27 @@
           <div class="col-md-4">
             <div class="card">
               <img
-                src="assets/lunch-1.jpg"
+                src="assets/sizzling_pusit.jpg"
                 class="card-img-top"
-                alt="Lunch Dish 1"
+                alt="Sizzling Pusit"
               />
               <div class="card-body">
-                <h5 class="card-title">Sizzling Pork Sisig</h5>
+                <h5 class="card-title">Sizzling Pusit</h5>
+                <p class="card-text">Sizzling squid seasoned to perfection.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="assets/chicken_bbq.jpg"
+                class="card-img-top"
+                alt="Chicken BBQ"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Chicken BBQ</h5>
                 <p class="card-text">
-                  Classic pork sisig served sizzling hot with egg on top.
+                  Juicy grilled chicken marinated in special sauce.
                 </p>
               </div>
             </div>
@@ -122,14 +261,27 @@
           <div class="col-md-4">
             <div class="card">
               <img
-                src="assets/lunch-2.jpg"
+                src="assets/pork_chop.jpg"
                 class="card-img-top"
-                alt="Lunch Dish 2"
+                alt="Pork Chop"
               />
               <div class="card-body">
-                <h5 class="card-title">Kare-Kare</h5>
+                <h5 class="card-title">Pork Chop</h5>
+                <p class="card-text">Juicy pork chop grilled to perfection.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="assets/crispy_pork_belly.jpg"
+                class="card-img-top"
+                alt="Crispy Pork Belly"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Crispy Pork Belly</h5>
                 <p class="card-text">
-                  Traditional peanut-based stew with tender beef and vegetables.
+                  Perfectly cooked pork belly with crispy skin.
                 </p>
               </div>
             </div>
@@ -137,14 +289,44 @@
           <div class="col-md-4">
             <div class="card">
               <img
-                src="assets/lunch-3.jpg"
+                src="assets/pork_liempo.jpg"
                 class="card-img-top"
-                alt="Lunch Dish 3"
+                alt="Pork Liempo"
               />
               <div class="card-body">
-                <h5 class="card-title">Grilled Liempo</h5>
+                <h5 class="card-title">Pork Liempo</h5>
                 <p class="card-text">
-                  Juicy grilled pork belly served with a side of fresh greens.
+                  Grilled pork belly served with fresh vegetables.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="assets/pork_sisig.jpg"
+                class="card-img-top"
+                alt="Pork Sisig"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Pork Sisig</h5>
+                <p class="card-text">
+                  Classic sizzling pork sisig with onions and egg.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="assets/beef_pares.jpg"
+                class="card-img-top"
+                alt="Beef Pares"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Beef Pares</h5>
+                <p class="card-text">
+                  Beef stew served with rice and side of broth.
                 </p>
               </div>
             </div>
@@ -159,14 +341,14 @@
           <div class="col-md-4">
             <div class="card">
               <img
-                src="assets/dinner-1.jpg"
+                src="assets/pancit_mix.jpg"
                 class="card-img-top"
-                alt="Dinner Dish 1"
+                alt="Pancit Mix"
               />
               <div class="card-body">
-                <h5 class="card-title">Sizzling Bulalo</h5>
+                <h5 class="card-title">Pancit Mix</h5>
                 <p class="card-text">
-                  Rich and flavorful beef shank served sizzling with veggies.
+                  Stir-fried noodles with vegetables and meat.
                 </p>
               </div>
             </div>
@@ -174,14 +356,25 @@
           <div class="col-md-4">
             <div class="card">
               <img
-                src="assets/dinner-2.jpg"
+                src="assets/chao_fan.jpg"
                 class="card-img-top"
-                alt="Dinner Dish 2"
+                alt="Chao Fan"
               />
               <div class="card-body">
-                <h5 class="card-title">Sizzling Seafood Platter</h5>
+                <h5 class="card-title">Chao Fan</h5>
                 <p class="card-text">
-                  A variety of seafood served sizzling, perfect for sharing.
+                  Fried rice with a mix of vegetables and meat.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="assets/lomi.jpg" class="card-img-top" alt="Lomi" />
+              <div class="card-body">
+                <h5 class="card-title">Lomi</h5>
+                <p class="card-text">
+                  Thick noodles served in savory broth with vegetables.
                 </p>
               </div>
             </div>
@@ -189,15 +382,29 @@
           <div class="col-md-4">
             <div class="card">
               <img
-                src="assets/dinner-3.jpg"
+                src="assets/pancit_bihon.jpg"
                 class="card-img-top"
-                alt="Dinner Dish 3"
+                alt="Pancit Bihon"
               />
               <div class="card-body">
-                <h5 class="card-title">Sizzling Steak</h5>
+                <h5 class="card-title">Pancit Bihon</h5>
                 <p class="card-text">
-                  Perfectly cooked beef steak served sizzling with mashed
-                  potatoes.
+                  Rice noodles stir-fried with vegetables and meat.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="assets/sotanghon.jpg"
+                class="card-img-top"
+                alt="Sotanghon"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Sotanghon</h5>
+                <p class="card-text">
+                  Vermicelli noodles in savory broth with meat and vegetables.
                 </p>
               </div>
             </div>
@@ -206,7 +413,7 @@
       </div>
     </section>
 
-    <footer class="text-center bg-dark text-light py-3">
+    <footer class="text-center">
       <p>&copy; 2024 Baliwag's Best Sizzling House. All rights reserved.</p>
     </footer>
 

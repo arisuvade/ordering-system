@@ -4,15 +4,109 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Baliwag's Best Sizzling House - Home</title>
-    <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <style>
+      /* Base styling for dark karinderya theme */
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #1a1a1a; /* Dark background for overall page */
+        color: #f0e68c; /* Light golden yellow for text */
+      }
+
+      /* Navbar styling */
+      .navbar {
+        background-color: #3a3a3a; /* Darker grey for a rustic, warm look */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      .navbar-brand {
+        font-size: 1.75rem;
+        font-weight: bold;
+        color: #ffcc00 !important; /* Bright yellow to stand out */
+      }
+
+      .nav-link {
+        color: #f0e68c !important; /* Light golden text for navbar links */
+      }
+
+      .nav-link:hover {
+        color: #ffae42 !important; /* Bright orange for hover */
+      }
+
+      /* Jumbotron styling */
+      .jumbotron {
+        background: linear-gradient(
+          135deg,
+          #4a4a4a,
+          #3a3a3a
+        ); /* Dark gradient */
+        color: #ffcc00; /* Bright text for visibility */
+        padding: 3rem 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      .jumbotron h1 {
+        font-weight: bold;
+        font-size: 3rem;
+      }
+
+      .jumbotron p {
+        font-size: 1.25rem;
+      }
+
+      /* Intro section styling */
+      .intro img {
+        border-radius: 10px;
+        background-color: #2e2e2e; /* Dark grey for image background */
+        padding: 8px; /* Adds a bit of space around images */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .intro img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3); /* Gold glow effect on hover */
+      }
+
+      .intro-text p {
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+        color: #f0e68c; /* Light text for readability */
+      }
+
+      /* Footer styling */
+      footer {
+        background-color: #3a3a3a; /* Darker grey for consistency */
+        color: #ffcc00; /* Bright text to match branding */
+        padding: 1.5rem 0;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .jumbotron h1 {
+          font-size: 2rem;
+        }
+
+        .jumbotron p {
+          font-size: 1rem;
+        }
+
+        .intro img {
+          margin-bottom: 1rem;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg">
       <a class="navbar-brand" href="index.html"
         >Baliwag's Best Sizzling House</a
       >
@@ -45,7 +139,7 @@
       </div>
     </nav>
 
-    <header class="jumbotron text-center bg-warning">
+    <header class="jumbotron text-center">
       <h1>Welcome to Baliwag's Best Sizzling House!</h1>
       <p>Experience the Best Sizzling Plates in Town!</p>
     </header>
@@ -93,7 +187,7 @@
       </div>
     </section>
 
-    <footer class="text-center bg-dark text-light py-3">
+    <footer class="text-center">
       <p>&copy; 2024 Baliwag's Best Sizzling House. All rights reserved.</p>
     </footer>
 
