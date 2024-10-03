@@ -45,12 +45,6 @@
         margin: 3rem 20%; /* Margins for compact layout */
       }
 
-      h2 {
-        color: #ffcc00; /* Bright yellow for section heading */
-        text-align: center;
-        margin-bottom: 1.5rem;
-      }
-
       .item-list {
         margin-bottom: 1.5rem;
       }
@@ -199,10 +193,62 @@
     </nav>
 
     <main>
-      <h2>Your Cart</h2>
+      <h1 class="text-center font-weight-bold">Your Cart</h1>
+      <br />
 
       <div class="item-list">
         <!-- Cart Items -->
+        <div class="cart-item">
+          <img src="assets/longgadog.jpg" alt="Longgadog" />
+          <div class="item-details">
+            <span class="item-name">Longgadog</span>
+            <span class="item-price">₱75.00</span>
+            <!-- Fixed price -->
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="75">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/porkalog.jpg" alt="Porkalog" />
+          <div class="item-details">
+            <span class="item-name">Porkalog</span>
+            <span class="item-price">₱80.00</span>
+            <!-- Fixed price -->
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="80">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/hotkalog.jpg" alt="Hotkalog" />
+          <div class="item-details">
+            <span class="item-name">Hotkalog</span>
+            <span class="item-price">₱80.00</span>
+            <!-- Fixed price -->
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="80">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
         <div class="cart-item">
           <img src="assets/sizzling_pusit.jpg" alt="Sizzling Pusit" />
           <div class="item-details">
@@ -241,40 +287,6 @@
           <img src="assets/pork_chop.jpg" alt="Pork Chop" />
           <div class="item-details">
             <span class="item-name">Pork Chop</span>
-            <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
-          </div>
-          <div class="quantity-control">
-            <button onclick="decrementQuantity(this)" class="quantity-btn">
-              -
-            </button>
-            <span class="quantity" data-price="80">0</span>
-            <button onclick="incrementQuantity(this)" class="quantity-btn">
-              +
-            </button>
-          </div>
-        </div>
-        <div class="cart-item">
-          <img src="assets/longgadog.jpg" alt="Longgadog" />
-          <div class="item-details">
-            <span class="item-name">Longgadog</span>
-            <span class="item-price">₱75.00</span>
-            <!-- Fixed price -->
-          </div>
-          <div class="quantity-control">
-            <button onclick="decrementQuantity(this)" class="quantity-btn">
-              -
-            </button>
-            <span class="quantity" data-price="75">0</span>
-            <button onclick="incrementQuantity(this)" class="quantity-btn">
-              +
-            </button>
-          </div>
-        </div>
-        <div class="cart-item">
-          <img src="assets/porkalog.jpg" alt="Porkalog" />
-          <div class="item-details">
-            <span class="item-name">Porkalog</span>
             <span class="item-price">₱80.00</span>
             <!-- Fixed price -->
           </div>
@@ -428,23 +440,6 @@
           <img src="assets/sotanghon.jpg" alt="Sotanghon" />
           <div class="item-details">
             <span class="item-name">Sotanghon</span>
-            <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
-          </div>
-          <div class="quantity-control">
-            <button onclick="decrementQuantity(this)" class="quantity-btn">
-              -
-            </button>
-            <span class="quantity" data-price="80">0</span>
-            <button onclick="incrementQuantity(this)" class="quantity-btn">
-              +
-            </button>
-          </div>
-        </div>
-        <div class="cart-item">
-          <img src="assets/hotkalog.jpg" alt="Hotkalog" />
-          <div class="item-details">
-            <span class="item-name">Hotkalog</span>
             <span class="item-price">₱80.00</span>
             <!-- Fixed price -->
           </div>
