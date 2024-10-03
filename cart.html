@@ -75,6 +75,16 @@
         border-radius: 5px; /* Rounded corners for images */
       }
 
+      .item-section {
+        margin-top: 2rem;
+        font-size: 1.8em; /* Larger font size for section title */
+        font-weight: bold;
+        color: #ffcc00; /* Dark blue color */
+        margin-bottom: 10px;
+        border-bottom: 2px solid #ffae42; /* Blue underline */
+        padding-bottom: 5px;
+      }
+
       .item-details {
         flex-grow: 1;
         display: flex;
@@ -235,12 +245,12 @@
 
       <div class="item-list">
         <!-- Cart Items -->
+        <div class="item-section">Agahan(Breakfast)</div>
         <div class="cart-item">
           <img src="assets/longgadog.jpg" alt="Longgadog" />
           <div class="item-details">
             <span class="item-name">Longgadog</span>
             <span class="item-price">₱75.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -257,7 +267,6 @@
           <div class="item-details">
             <span class="item-name">Porkalog</span>
             <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -274,7 +283,6 @@
           <div class="item-details">
             <span class="item-name">Hotkalog</span>
             <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -291,7 +299,6 @@
           <div class="item-details">
             <span class="item-name">Chixkalog</span>
             <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -308,7 +315,6 @@
           <div class="item-details">
             <span class="item-name">Tokalog</span>
             <span class="item-price">₱70.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -325,7 +331,6 @@
           <div class="item-details">
             <span class="item-name">Longgkalog</span>
             <span class="item-price">₱60.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -337,12 +342,13 @@
             </button>
           </div>
         </div>
+
+        <div class="item-section">Tanghalian (Lunch)</div>
         <div class="cart-item">
           <img src="assets/chao_fan.jpg" alt="Chao Fan" />
           <div class="item-details">
             <span class="item-name">Chao Fan</span>
             <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -359,7 +365,6 @@
           <div class="item-details">
             <span class="item-name">Chicken BBQ</span>
             <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -376,7 +381,6 @@
           <div class="item-details">
             <span class="item-name">Pork Chop</span>
             <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -393,7 +397,6 @@
           <div class="item-details">
             <span class="item-name">Pork Liempo</span>
             <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -410,7 +413,6 @@
           <div class="item-details">
             <span class="item-name">Pork Tapa</span>
             <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -422,12 +424,13 @@
             </button>
           </div>
         </div>
+
+        <div class="item-section">Hapunan (Dinner)</div>
         <div class="cart-item">
           <img src="assets/sizzling_pusit.jpg" alt="Sizzling Pusit" />
           <div class="item-details">
             <span class="item-name">Sizzling Pusit</span>
             <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -444,7 +447,6 @@
           <div class="item-details">
             <span class="item-name">Pork Sisig</span>
             <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -461,7 +463,6 @@
           <div class="item-details">
             <span class="item-name">Crispy Pork Belly</span>
             <span class="item-price">₱50.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -473,12 +474,13 @@
             </button>
           </div>
         </div>
+
+        <div class="item-section">Meryenda (Snacks)</div>
         <div class="cart-item">
           <img src="assets/pancit_bihon.jpg" alt="Pancit Bihon" />
           <div class="item-details">
             <span class="item-name">Pancit Canton</span>
             <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -495,7 +497,6 @@
           <div class="item-details">
             <span class="item-name">Pancit Mix</span>
             <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -512,7 +513,6 @@
           <div class="item-details">
             <span class="item-name">Pancit Canton</span>
             <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -529,7 +529,6 @@
           <div class="item-details">
             <span class="item-name">Lomi</span>
             <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -546,7 +545,6 @@
           <div class="item-details">
             <span class="item-name">Sotanghon</span>
             <span class="item-price">₱80.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -558,12 +556,13 @@
             </button>
           </div>
         </div>
+
+        <div class="item-section">Add-ons</div>
         <div class="cart-item">
           <img src="assets/extra_rice.jpg" alt="Extra Rice" />
           <div class="item-details">
             <span class="item-name">Extra Rice</span>
             <span class="item-price">₱15.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -580,7 +579,6 @@
           <div class="item-details">
             <span class="item-name">Extra Fried Rice</span>
             <span class="item-price">₱30.00</span>
-            <!-- Fixed price -->
           </div>
           <div class="quantity-control">
             <button onclick="decrementQuantity(this)" class="quantity-btn">
@@ -595,6 +593,8 @@
       </div>
 
       <div class="total-section">
+        <br />
+        <br />
         <h3>Total: ₱<span id="total-price">0</span></h3>
       </div>
 
