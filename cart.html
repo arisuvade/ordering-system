@@ -20,14 +20,20 @@
 
       /* Navbar styling */
       .navbar {
-        background-color: #3a3a3a; /* Dark grey for a rustic, warm look */
+        background-color: #3a3a3a; /* Darker grey for a rustic, warm look */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
       }
 
       .navbar-brand {
+        margin-left: 1rem;
         font-size: 1.75rem;
         font-weight: bold;
         color: #ffcc00 !important; /* Bright yellow to stand out */
+      }
+
+      .nav-item {
+        font-weight: bold;
+        margin-right: 1rem;
       }
 
       .nav-link {
@@ -148,14 +154,42 @@
         margin: 0;
       }
 
+      /* Add the CSS styles here */
       .dine-in-take-out {
-        text-align: center;
-        margin-top: 2rem;
+        color: #ffcc00;
+        display: flex;
+        justify-content: center; /* Adjust to space between */
+        margin: 10px 0; /* Add space around the component */
       }
 
-      .dine-in-take-out label {
-        margin-right: 1rem;
-        color: #ffcc00; /* Bright yellow for labels */
+      .dine-option {
+        display: flex;
+        align-items: center; /* Aligns text and radio button vertically */
+        cursor: pointer; /* Changes cursor to pointer on hover */
+        padding: 5px; /* Adjusted padding for closer proximity */
+        border: 2px solid transparent; /* Sets border for active states */
+        border-radius: 5px; /* Rounds corners */
+        transition: border-color 0.3s; /* Smooth transition for hover */
+      }
+
+      .dine-option:hover {
+        border-color: #ffcc00; /* Change border color on hover */
+      }
+
+      .dine-option input[type="radio"] {
+        display: none; /* Hide the default radio button */
+      }
+
+      .dine-option span {
+        background-color: #1a1a1a; /* Background color for label */
+        padding: 10px 15px; /* Space around the text */
+        border-radius: 5px; /* Rounds the edges of the label */
+        transition: background-color 0.3s; /* Smooth transition for active states */
+      }
+
+      .dine-option input[type="radio"]:checked + span {
+        background-color: #ffcc00; /* Highlight background color when checked */
+        color: #1a1a1a;
       }
     </style>
   </head>
@@ -507,6 +541,40 @@
             </button>
           </div>
         </div>
+        <div class="cart-item">
+          <img src="assets/extra_rice.jpg" alt="Extra Rice" />
+          <div class="item-details">
+            <span class="item-name">Extra Rice</span>
+            <span class="item-price">₱15.00</span>
+            <!-- Fixed price -->
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="15">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="assets/extra_fried_rice.jpg" alt="extra_fried_rice" />
+          <div class="item-details">
+            <span class="item-name">Extra Fried Rice</span>
+            <span class="item-price">₱30.00</span>
+            <!-- Fixed price -->
+          </div>
+          <div class="quantity-control">
+            <button onclick="decrementQuantity(this)" class="quantity-btn">
+              -
+            </button>
+            <span class="quantity" data-price="30">0</span>
+            <button onclick="incrementQuantity(this)" class="quantity-btn">
+              +
+            </button>
+          </div>
+        </div>
       </div>
 
       <div class="total-section">
@@ -514,22 +582,26 @@
       </div>
 
       <div class="dine-in-take-out">
-        <label>
-          <input type="radio" name="dineOption" value="Dine In" checked /> Dine
-          In
+        <label class="dine-option">
+          <input type="radio" name="dineOption" value="Dine In" checked />
+          <span>Dine In</span>
         </label>
-        <label>
-          <input type="radio" name="dineOption" value="Take Out" /> Take Out
+        <label class="dine-option">
+          <input type="radio" name="dineOption" value="Take Out" />
+          <span>Take Out</span>
         </label>
       </div>
 
       <div class="text-center">
         <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
-        <button class="done-btn" onclick="checkout()">Checkout</button>
+        <button class="done-btn" onclick="generateReceipt()">
+          Generate Receipt
+        </button>
       </div>
 
       <div class="receipt" id="receipt">
         <h4>Receipt</h4>
+        <p>Order Type: <span id="order-type-receipt"></span></p>
         <div id="receipt-items"></div>
         <h5>Total Amount: ₱<span id="receipt-total">0</span></h5>
         <p>Please show this receipt to the server.</p>
@@ -577,12 +649,19 @@
         document.getElementById("receipt").style.display = "none"; // Hide receipt
       }
 
-      function checkout() {
+      function generateReceipt() {
         const quantities = document.querySelectorAll(".quantity");
         const receiptItems = document.getElementById("receipt-items");
         const receiptTotalElement = document.getElementById("receipt-total");
+        const orderTypeElement = document.getElementById("order-type-receipt");
         let receiptTotal = 0;
         receiptItems.innerHTML = ""; // Clear previous receipt
+
+        // Get the selected order type
+        const orderType = document.querySelector(
+          'input[name="dineOption"]:checked'
+        ).value;
+        orderTypeElement.textContent = orderType; // Display selected order type
 
         quantities.forEach((quantity, index) => {
           const itemPrice = parseInt(quantity.dataset.price);
@@ -601,9 +680,7 @@
         receiptTotalElement.textContent = receiptTotal.toFixed(2);
         document.getElementById("receipt").style.display = "block"; // Show receipt
       }
-
-      // Initialize total on page load
-      document.addEventListener("DOMContentLoaded", calculateTotal);
+      ddEventListener("DOMContentLoaded", calculateTotal);
     </script>
 
     <footer>
