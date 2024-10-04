@@ -1,0 +1,166 @@
+<?php
+$gallery = [
+  "gallery1.jpeg" => ["alt" => "Sizzling Dish 1", "class" => "col-md-8"],
+  "gallery2.jpeg" => ["alt" => "Sizzling Dish 2", "class" => "col-md-4"],
+  "gallery3.jpeg" => ["alt" => "Sizzling Dish 3", "class" => "col-md-4"],
+  "gallery4.jpeg" => ["alt" => "Sizzling Dish 4", "class" => "col-12"]
+];
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baliwag's Best Sizzling House</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #1a1a1a;
+      color: #f0e68c;
+    }
+
+    .navbar {
+      background-color: #3a3a3a;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-brand {
+      margin-left: 1rem;
+      font-size: 1.75rem;
+      font-weight: bold;
+      color: #ffcc00 !important;
+    }
+
+    .nav-item {
+      font-weight: bold;
+      margin-right: 1rem;
+    }
+
+    .nav-link {
+      color: #f0e68c !important;
+    }
+
+    .nav-link:hover {
+      color: #ffae42 !important;
+    }
+
+    .jumbotron {
+      background: linear-gradient(135deg, #4a4a4a, #3a3a3a);
+      color: #ffcc00;
+      padding: 3rem 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .jumbotron h1 {
+      font-weight: bold;
+      font-size: 3rem;
+    }
+
+    .jumbotron p {
+      font-size: 1.25rem;
+    }
+
+    .intro img {
+      border-radius: 10px;
+      background-color: #2e2e2e;
+      padding: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .intro img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
+    }
+
+    .intro-text p {
+      font-size: 1.3rem;
+      margin-top: 1.5rem;
+      color: #f0e68c;
+    }
+
+    footer {
+      background-color: #3a3a3a;
+      color: #ffcc00;
+      padding: 1.5rem 0;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="index.html">Baliwag's Best Sizzling House</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="menu.php">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cart.php">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.php">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="jumbotron text-center">
+    <h1>Welcome to Baliwag's Best Sizzling House!</h1>
+    <br />
+    <p>
+      Masarap na lasa, masustansyang pagkain, di malilimutang
+      karanasan—Baliwag's Best sa bawat kagat!
+    </p>
+  </header>
+
+  <!-- Intro Section with Grid System -->
+  <section class="intro container my-5">
+    <div class="row">
+      <?php foreach ($gallery as $img => $details): ?>
+        <div class="<?= $details['class'] ?>">
+          <img src="assets/<?= $img ?>" class="img-fluid mb-3" alt="<?= $details['alt'] ?>">
+        </div>
+      <?php endforeach; ?>
+    </div>
+    <div class="intro-text text-center mt-4">
+      <br />
+      <p>
+        Sa Baliwag's Best Sizzling House, bawat pagkain ay isang pagkakataong
+        malasahan—bawat kagat ay puno ng orihinal na lasa ng Pilipino. Kung
+        ikaw ay nahuhumaling sa usok ng inihaw, sa malutong na lechon kawali,
+        o sa mainit na bowl ng lomi, ang aming menu ay may espesyal na handog
+        para sa bawat panlasa. Halika at hayaang ang sizzle ay humikbi sa iyo,
+        at umalis na busog at masaya!
+      </p>
+    </div>
+  </section>
+
+  <footer class="text-center">
+    <p>&copy; 2024 Baliwag's Best Sizzling House. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
