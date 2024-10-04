@@ -11,16 +11,14 @@
       crossorigin="anonymous"
     />
     <style>
-      /* Base styling for dark karinderya theme */
       body {
         font-family: "Arial", sans-serif;
-        background-color: #1a1a1a; /* Dark background for overall page */
-        color: #f0e68c; /* Light golden yellow for text */
+        background-color: #1a1a1a;
+        color: #f0e68c;
       }
 
-      /* Navbar styling */
       .navbar {
-        background-color: #3a3a3a; /* Darker grey for a rustic, warm look */
+        background-color: #3a3a3a;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
       }
 
@@ -28,7 +26,7 @@
         margin-left: 1rem;
         font-size: 1.75rem;
         font-weight: bold;
-        color: #ffcc00 !important; /* Bright yellow to stand out */
+        color: #ffcc00 !important;
       }
 
       .nav-item {
@@ -37,11 +35,11 @@
       }
 
       .nav-link {
-        color: #f0e68c !important; /* Light golden text for navbar links */
+        color: #f0e68c !important;
       }
 
       .nav-link:hover {
-        color: #ffae42 !important; /* Bright orange for hover */
+        color: #ffae42 !important;
       }
 
       .page-title {
@@ -51,13 +49,12 @@
         margin-bottom: 3rem;
       }
 
-      /* Main content styling */
       main {
         padding: 2rem;
-        background-color: #2e2e2e; /* Dark grey for main content */
-        border-radius: 10px; /* Rounded corners */
+        background-color: #2e2e2e;
+        border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        margin: 3rem 20%; /* Margins for compact layout */
+        margin: 3rem 20%;
       }
 
       .item-list {
@@ -68,45 +65,45 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0.75rem; /* Reduced padding */
-        background-color: #3a3a3a; /* Dark grey for cart items */
+        padding: 0.75rem;
+        background-color: #3a3a3a;
         border-radius: 5px;
         margin-bottom: 1rem;
-        color: #f0e68c; /* Light golden text */
+        color: #f0e68c;
       }
 
       .cart-item img {
-        width: 50px; /* Small image size */
-        height: 50px; /* Maintain aspect ratio */
-        margin-right: 1rem; /* Space between image and text */
-        border-radius: 5px; /* Rounded corners for images */
+        width: 50px;
+        height: 50px;
+        margin-right: 1rem;
+        border-radius: 5px;
       }
 
       .item-section {
         margin-top: 2rem;
-        font-size: 1.8em; /* Larger font size for section title */
+        font-size: 1.8em;
         font-weight: bold;
-        color: #ffcc00; /* Dark blue color */
+        color: #ffcc00;
         margin-bottom: 10px;
-        border-bottom: 2px solid #ffae42; /* Blue underline */
+        border-bottom: 2px solid #ffae42;
         padding-bottom: 5px;
       }
 
       .item-details {
         flex-grow: 1;
         display: flex;
-        justify-content: space-between; /* Align name and price */
-        margin-left: 1rem; /* Add margin between image and details */
+        justify-content: space-between;
+        margin-left: 1rem;
       }
 
       .item-name {
-        flex-grow: 1; /* Allow name to take available space */
-        text-align: left; /* Align name to the left */
+        flex-grow: 1;
+        text-align: left;
       }
 
       .item-price {
-        text-align: center; /* Center the price */
-        width: 100px; /* Fixed width for centering */
+        text-align: center;
+        width: 100px;
       }
 
       .quantity-control {
@@ -115,9 +112,9 @@
       }
 
       .quantity-btn {
-        background-color: #ffcc00; /* Button color */
+        background-color: #ffcc00;
         border: none;
-        color: #1a1a1a; /* Dark text color */
+        color: #1a1a1a;
         padding: 0.5rem 1rem;
         border-radius: 5px;
         cursor: pointer;
@@ -125,13 +122,13 @@
       }
 
       .quantity-btn:hover {
-        background-color: #ffae42; /* Bright orange on hover */
+        background-color: #ffae42;
       }
 
       .total-section {
         text-align: center;
         margin-top: 2rem;
-        color: #ffcc00; /* Bright yellow for total */
+        color: #ffcc00;
       }
 
       .done-btn,
@@ -143,26 +140,26 @@
         padding: 0.5rem 1.5rem;
         border-radius: 5px;
         cursor: pointer;
-        margin-right: 1rem; /* Space between buttons */
+        margin-right: 1rem;
       }
 
       .done-btn:hover,
       .clear-btn:hover {
-        background-color: #ffae42; /* Bright orange on hover */
+        background-color: #ffae42;
       }
 
       .receipt {
-        display: none; /* Initially hidden */
+        display: none;
         margin-top: 2rem;
         background-color: #3a3a3a;
         padding: 1rem;
         border-radius: 5px;
-        text-align: center; /* Center the receipt text */
+        text-align: center;
       }
 
       footer {
-        background-color: #3a3a3a; /* Darker grey for consistency */
-        color: #ffcc00; /* Bright text to match branding */
+        background-color: #3a3a3a;
+        color: #ffcc00;
         padding: 1.5rem 0;
         text-align: center;
       }
@@ -171,41 +168,40 @@
         margin: 0;
       }
 
-      /* Add the CSS styles here */
       .dine-in-take-out {
         color: #ffcc00;
         display: flex;
-        justify-content: center; /* Adjust to space between */
-        margin: 10px 0; /* Add space around the component */
+        justify-content: center;
+        margin: 10px 0;
       }
 
       .dine-option {
         display: flex;
-        align-items: center; /* Aligns text and radio button vertically */
-        cursor: pointer; /* Changes cursor to pointer on hover */
-        padding: 5px; /* Adjusted padding for closer proximity */
-        border: 2px solid transparent; /* Sets border for active states */
-        border-radius: 5px; /* Rounds corners */
-        transition: border-color 0.3s; /* Smooth transition for hover */
+        align-items: center;
+        cursor: pointer;
+        padding: 5px;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        transition: border-color 0.3s;
       }
 
       .dine-option:hover {
-        border-color: #ffcc00; /* Change border color on hover */
+        border-color: #ffcc00;
       }
 
       .dine-option input[type="radio"] {
-        display: none; /* Hide the default radio button */
+        display: none;
       }
 
       .dine-option span {
-        background-color: #1a1a1a; /* Background color for label */
-        padding: 10px 15px; /* Space around the text */
-        border-radius: 5px; /* Rounds the edges of the label */
-        transition: background-color 0.3s; /* Smooth transition for active states */
+        background-color: #1a1a1a;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
       }
 
       .dine-option input[type="radio"]:checked + span {
-        background-color: #ffcc00; /* Highlight background color when checked */
+        background-color: #ffcc00;
         color: #1a1a1a;
       }
     </style>
@@ -229,7 +225,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <!-- Use ms-auto instead of ml-auto -->
           <li class="nav-item">
             <a class="nav-link" href="index.html">Home</a>
           </li>
@@ -632,7 +627,6 @@
     </main>
 
     <script>
-      // JavaScript for handling quantity changes
       function incrementQuantity(button) {
         const quantityElement = button.previousElementSibling;
         let currentQuantity = parseInt(quantityElement.textContent);
@@ -666,7 +660,7 @@
       function clearCart() {
         const quantities = document.querySelectorAll(".quantity");
         quantities.forEach((quantity) => {
-          quantity.textContent = 0; // Reset quantities to 0
+          quantity.textContent = 0;
         });
         calculateTotal(); // Recalculate total
         document.getElementById("receipt").style.display = "none"; // Hide receipt
@@ -678,13 +672,13 @@
         const receiptTotalElement = document.getElementById("receipt-total");
         const orderTypeElement = document.getElementById("order-type-receipt");
         let receiptTotal = 0;
-        receiptItems.innerHTML = ""; // Clear previous receipt
+        receiptItems.innerHTML = "";
 
         // Get the selected order type
         const orderType = document.querySelector(
           'input[name="dineOption"]:checked'
         ).value;
-        orderTypeElement.textContent = orderType; // Display selected order type
+        orderTypeElement.textContent = orderType;
 
         quantities.forEach((quantity, index) => {
           const itemPrice = parseInt(quantity.dataset.price);
@@ -701,7 +695,7 @@
         });
 
         receiptTotalElement.textContent = receiptTotal.toFixed(2);
-        document.getElementById("receipt").style.display = "block"; // Show receipt
+        document.getElementById("receipt").style.display = "block";
       }
       ddEventListener("DOMContentLoaded", calculateTotal);
     </script>
