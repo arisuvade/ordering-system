@@ -662,8 +662,8 @@
         quantities.forEach((quantity) => {
           quantity.textContent = 0;
         });
-        calculateTotal(); // Recalculate total
-        document.getElementById("receipt").style.display = "none"; // Hide receipt
+        calculateTotal();
+        document.getElementById("receipt").style.display = "none";
       }
 
       function generateReceipt() {
@@ -674,7 +674,6 @@
         let receiptTotal = 0;
         receiptItems.innerHTML = "";
 
-        // Get the selected order type
         const orderType = document.querySelector(
           'input[name="dineOption"]:checked'
         ).value;
